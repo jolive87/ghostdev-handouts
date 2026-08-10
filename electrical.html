@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Electrical Engineering — Meter Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0c;--ink:#f2efe9;--dim:#7c8088;--amber:#ff4a1c;--red:#ff4a1c;--line:#212228}
+body{background:var(--bg);color:var(--ink);font-family:Archivo,"Helvetica Neue",system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.5;padding:2rem 1.2rem 5rem}
+.wrap{max-width:46rem;margin:0 auto}
+.top{border-bottom:3px solid var(--amber);padding-bottom:1.1rem;margin-bottom:2rem}
+.eyebrow{font-family:"IBM Plex Mono",monospace;color:var(--amber);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(1.9rem,7vw,2.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:.5rem}
+.lede{color:var(--dim);font-size:1.02rem;margin-top:.8rem}
+h2{font-size:1.28rem;font-weight:800;letter-spacing:-.01em;margin:2.4rem 0 .9rem;
+ padding-left:.8rem;border-left:4px solid var(--amber)}
+p{color:#c9ccd2;margin:.7rem 0}
+b{color:#f2efe9}
+ul{list-style:none;margin:.6rem 0}
+li{color:#c9ccd2;padding:.42rem 0 .42rem 1.5rem;position:relative}
+li::before{content:"";position:absolute;left:0;top:1.02em;width:.7rem;height:2px;background:var(--amber)}
+table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.94rem}
+th{font-family:"IBM Plex Mono",monospace;text-align:left;color:var(--amber);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+ padding:.5rem .6rem .5rem 0;border-bottom:2px solid var(--line)}
+td{padding:.62rem .6rem .62rem 0;border-bottom:1px solid var(--line);color:#c9ccd2;vertical-align:top}
+td b{color:#f2efe9}
+.warn{border-left:4px solid var(--red);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.warn .h{color:var(--red);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.warn p{margin:.3rem 0;color:#e8c9ba}
+.ok{border-left:4px solid var(--amber);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.ok .h{color:var(--amber);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.quote{color:#f2efe9;font-size:1.06rem;border-left:4px solid var(--amber);padding-left:1rem;margin:1.2rem 0}
+.back{display:inline-block;margin-top:2.6rem;color:var(--amber);text-decoration:none;font-weight:700;
+ border:2px solid var(--amber);padding:.6rem 1.1rem}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);color:#5a616a;font-size:.82rem}
+.pill{display:inline-block;background:#1a0d08;border:1px solid var(--amber);color:var(--amber);
+ padding:.2rem .6rem;font-size:.74rem;font-weight:700;letter-spacing:.08em;margin:.15rem .3rem .15rem 0}
+a.card{display:block;border:2px solid var(--line);border-left:5px solid var(--amber);padding:1.3rem 1.2rem;
+ margin:1rem 0;text-decoration:none;transition:border-color .15s}
+a.card:hover{border-color:var(--amber)}
+a.card .t{color:#f2efe9;font-size:1.2rem;font-weight:800}
+a.card .d{color:var(--dim);font-size:.94rem;margin-top:.35rem}
+
+.nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.6rem;padding-top:1.4rem;border-top:2px solid var(--line)}
+.nav a{flex:1;min-width:9rem;text-align:center;border:2px solid var(--line);color:#c9ccd2;
+ text-decoration:none;padding:.75rem .6rem;font-weight:700;font-size:.92rem}
+.nav a:hover,.nav a.home{border-color:var(--amber);color:var(--amber)}
+@media print{body{background:#fff;color:#000}p,li,td{color:#222}h1,b,td b,a.card .t{color:#000}}
+</style></head><body><div class="wrap">
+<div class="top">
+<div class="eyebrow">Sheet 2 of 3</div>
+<h1>Electrical Engineering</h1>
+<p class="lede">What it measures, how it decides something is wrong, and every tariff number with its source.</p>
+</div>
+
+<h2>What it reads</h2>
+<table>
+<tr><th>Channel</th><th>Availability in the field</th></tr>
+<tr><td><b>kWh, kW demand, phase currents, system PF</b></td><td>Essentially universal — including the
+E-Mon D-Mon Class 2000, the most common installed sub-meter</td></tr>
+<tr><td><b>kVAR, THD, per-phase voltage</b></td><td><b>Absent on an estimated 85–90% of installed NYC
+sub-meters.</b> The platform carries a meter capability model, so on those meters the relevant detectors
+report <i>"this meter cannot measure that"</i> rather than a green all-clear</td></tr>
+</table>
+<p>That distinction matters more than it sounds. A "no problems found" on a channel the meter never
+measured is worse than no answer at all.</p>
+
+<h2>Baselines</h2>
+<ul>
+<li>One baseline <b>per meter</b> — two identical meters on the same floor legitimately have different normals.</li>
+<li>Bucketed by <b>hour of day &times; day of week</b>, in New York local time (this was a real defect once:
+UTC bucketing shifted every bucket 4–5 hours and the shift moved at DST).</li>
+<li><b>90 days minimum.</b> Below that, the meter is not analyzed at all.</li>
+</ul>
+
+<h2>Detection</h2>
+<ul>
+<li>Six engines: voltage deviation, demand spike, zero reading, power-factor drift, THD, and cross-meter
+correlation — plus a current-unbalance detector, which per NEMA MG-1 is the more sensitive indicator and one
+of the few channels real meters actually report</li>
+<li><b>Benjamini–Hochberg false-discovery-rate control.</b> Measured on pure noise: <b>13.1 false positives
+per meter per day &rarr; 0.0033</b>, while injected real faults were still caught 8 of 8.</li>
+<li>Voltage unbalance uses the NEMA MG-1 definition — maximum deviation from average, divided by average.
+The common <code>(max&minus;min)/avg</code> form overstates it by 1.5–2&times;.</li>
+<li>Power factor is aggregated as <b>&Sigma;kW / &Sigma;kVA</b>, not a mean of ratios. The mean-of-ratios form
+is biased high, which understates the exact penalty it's meant to price.</li>
+<li>Related anomalies group into <b>events</b>: one 2-hour incident went from 104 alerts down to 13.</li>
+</ul>
+
+<h2>ConEd tariff — every figure with its source</h2>
+<table>
+<tr><th>Quantity</th><th>Value &amp; source</th></tr>
+<tr><td><b>Demand interval</b></td><td><b>30 minutes</b> — General Rule 10.4. Most tools assume 15. The
+billing module integrates over 30</td></tr>
+<tr><td><b>Power factor threshold</b></td><td><b>0.9487</b> — GR 10.11(4) permits kVAR up to one-third of kW
+maximum demand; cos(atan(1/3)) = 0.94868. <b>Not 0.90</b></td></tr>
+<tr><td><b>Reactive charge</b></td><td><b>$2.56 / kVAR</b> — leaf 93 Rev 6, effective 2026-02-01</td></tr>
+<tr><td><b>Contract Demand</b></td><td>Highest registered demand over the trailing <b>18 months</b> —
+SC-9 Common Provisions, leaf 454</td></tr>
+<tr><td><b>Minimum Monthly Charge</b></td><td>Contract Demand &times; <b>40%</b> of the demand delivery
+charge — GR 10.10.b. Billed only when it exceeds base revenue</td></tr>
+<tr><td><b>Demand ratchet</b></td><td><b>Does not exist.</b> See below</td></tr>
+</table>
+
+<div class="ok"><div class="h">On the demand ratchet</div>
+<p>Earlier versions of this project carried a rule stating that billing demand is the greater of this
+month's peak or 80% of the highest peak in the prior 12 months. <b>An exhaustive search of the filed tariff
+— every General Rule and Service Classification in PSC No. 10 — returns zero occurrences</b> of "ratchet",
+"80%", "eighty percent", or "highest demand established". SC-9 has no "Billing Demand" heading at all.</p>
+<p>It had been copied from a generic list of utility mechanisms. It was removed, and a regression test now
+fails the build if anyone reintroduces it. What actually exists is the 18-month Contract Demand window
+above: longer memory, much smaller bite.</p></div>
+
+<h2>Compliance</h2>
+<p>LL84 / LL97 tracking is <b>electrical emissions only</b>, stated on every screen. A building burning gas
+can look compliant here and be over its limit in reality. Multi-fuel is roadmap, not shipped.</p>
+
+<div class="warn"><div class="h">Known limits</div>
+<p><b>CT/PT ratios are not applied as a multiplier.</b> Raw register values can differ from actual
+consumption by the CT ratio — commonly 100&times;, 200&times;, 400&times;. Every financial figure carries this
+label on screen.</p>
+<p><b>LL97 projections past the current compliance period are wrong.</b> The 2024–29 emissions coefficient is
+applied to every year; the 2030–34 value is roughly half. Do not read anything from 2030 onward.</p>
+<p><b>Rate schedules shown are labeled samples</b>, not your tariff. One real ConEd bill fixes that.</p>
+</div>
+<div class="nav"><a class="home" href="index.html">All sheets</a><a href="engineering.html">Engineering &amp; IT</a><a href="owners.html">Owners</a></div>
+<div class="foot">Meter Platform &middot; John Olivencia &middot; Prepared for the demo.
+Every figure here traces to a filed source document or a dated verification run. Nothing on this
+page is an estimate presented as a fact.</div>
+</div></body></html>

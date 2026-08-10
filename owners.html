@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Owners & Investors — Meter Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0c;--ink:#f2efe9;--dim:#7c8088;--amber:#ff4a1c;--red:#ff4a1c;--line:#212228}
+body{background:var(--bg);color:var(--ink);font-family:Archivo,"Helvetica Neue",system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.5;padding:2rem 1.2rem 5rem}
+.wrap{max-width:46rem;margin:0 auto}
+.top{border-bottom:3px solid var(--amber);padding-bottom:1.1rem;margin-bottom:2rem}
+.eyebrow{font-family:"IBM Plex Mono",monospace;color:var(--amber);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(1.9rem,7vw,2.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:.5rem}
+.lede{color:var(--dim);font-size:1.02rem;margin-top:.8rem}
+h2{font-size:1.28rem;font-weight:800;letter-spacing:-.01em;margin:2.4rem 0 .9rem;
+ padding-left:.8rem;border-left:4px solid var(--amber)}
+p{color:#c9ccd2;margin:.7rem 0}
+b{color:#f2efe9}
+ul{list-style:none;margin:.6rem 0}
+li{color:#c9ccd2;padding:.42rem 0 .42rem 1.5rem;position:relative}
+li::before{content:"";position:absolute;left:0;top:1.02em;width:.7rem;height:2px;background:var(--amber)}
+table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.94rem}
+th{font-family:"IBM Plex Mono",monospace;text-align:left;color:var(--amber);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+ padding:.5rem .6rem .5rem 0;border-bottom:2px solid var(--line)}
+td{padding:.62rem .6rem .62rem 0;border-bottom:1px solid var(--line);color:#c9ccd2;vertical-align:top}
+td b{color:#f2efe9}
+.warn{border-left:4px solid var(--red);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.warn .h{color:var(--red);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.warn p{margin:.3rem 0;color:#e8c9ba}
+.ok{border-left:4px solid var(--amber);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.ok .h{color:var(--amber);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.quote{color:#f2efe9;font-size:1.06rem;border-left:4px solid var(--amber);padding-left:1rem;margin:1.2rem 0}
+.back{display:inline-block;margin-top:2.6rem;color:var(--amber);text-decoration:none;font-weight:700;
+ border:2px solid var(--amber);padding:.6rem 1.1rem}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);color:#5a616a;font-size:.82rem}
+.pill{display:inline-block;background:#1a0d08;border:1px solid var(--amber);color:var(--amber);
+ padding:.2rem .6rem;font-size:.74rem;font-weight:700;letter-spacing:.08em;margin:.15rem .3rem .15rem 0}
+a.card{display:block;border:2px solid var(--line);border-left:5px solid var(--amber);padding:1.3rem 1.2rem;
+ margin:1rem 0;text-decoration:none;transition:border-color .15s}
+a.card:hover{border-color:var(--amber)}
+a.card .t{color:#f2efe9;font-size:1.2rem;font-weight:800}
+a.card .d{color:var(--dim);font-size:.94rem;margin-top:.35rem}
+
+.nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.6rem;padding-top:1.4rem;border-top:2px solid var(--line)}
+.nav a{flex:1;min-width:9rem;text-align:center;border:2px solid var(--line);color:#c9ccd2;
+ text-decoration:none;padding:.75rem .6rem;font-weight:700;font-size:.92rem}
+.nav a:hover,.nav a.home{border-color:var(--amber);color:var(--amber)}
+@media print{body{background:#fff;color:#000}p,li,td{color:#222}h1,b,td b,a.card .t{color:#000}}
+</style></head><body><div class="wrap">
+<div class="top">
+<div class="eyebrow">Sheet 3 of 3</div>
+<h1>Owners &amp; Investors</h1>
+<p class="lede">What exists, what it costs to try, and what a full build-out would require you to buy.</p>
+</div>
+
+<div class="quote">It takes the meter files we already produce, learns what normal looks like for every
+meter, tells you in plain English when something breaks, and turns that into a bill.</div>
+
+<h2>Where a metering operation loses money</h2>
+<table>
+<tr><th>Leak</th><th>Why it's expensive</th></tr>
+<tr><td><b>A meter goes down</b></td><td>Nobody knows. It reads zero or reads wrong until somebody notices on an invoice</td></tr>
+<tr><td><b>A bill doesn't go out</b></td><td>The reading never made it. That's revenue that simply doesn't happen</td></tr>
+<tr><td><b>Rates change</b></td><td>Nobody found out. We keep billing the old number</td></tr>
+<tr><td><b>Tariffs change</b></td><td>The same thing, but with bigger consequences — and it's ConEd's document, not ours</td></tr>
+</table>
+<p>Every one of these is invisible until it costs money. <b>That is the entire problem this attacks.</b></p>
+
+<h2>What works today</h2>
+<ul>
+<li>Ingests our real meter export files — a genuine 85-column master file: 4,818 rows, zero errors.</li>
+<li>Learns every meter's normal and flags deviations, with false alerts driven down to
+<b>0.0033 per meter per day</b> while still catching injected real faults 8 out of 8.</li>
+<li>Turns anomalies into assigned, tracked work.</li>
+<li>Produces an <b>itemized bill preview</b> — energy, demand, fixed, total — on flat and time-of-use
+structures, with demand computed the way ConEd actually bills it.</li>
+<li>Multi-tenant, with hard isolation between clients.</li>
+</ul>
+
+<h2>What it costs to find out</h2>
+<div class="ok"><div class="h">Phase 1 — the pilot</div>
+<p><b>Zero hardware. Zero installs. One folder of files.</b> One building, 90 days of the meter exports we
+already produce. The system builds its baselines and we compare what it catches against what we catch by
+hand. If it finds one power factor penalty or one failing meter before we do, it has paid for itself.</p></div>
+
+<h2>What turns estimates into billable numbers</h2>
+<table>
+<tr><th>Blocker</th><th>What clears it</th></tr>
+<tr><td>Rates on screen are labeled samples</td><td><b>One real ConEd bill.</b> That's company information —
+I wasn't going to take it without being told I could</td></tr>
+<tr><td>CT/PT ratios not applied</td><td>The ratios per meter. They're already on the meter cards; it's a
+field survey, not a purchase</td></tr>
+</table>
+<p><b>A photocopy and a walk-through.</b> That is the entire distance between what you saw and a number you
+could bill from.</p>
+
+<h2>Phase 3 — if you want the whole thing</h2>
+<p>A local AI system trained on your operation, running on hardware <b>you buy and own</b>, handling the
+document and data-entry work your people shouldn't be doing. Your teams stay in the loop and check the
+output; nothing goes out the door on the machine's say-so.</p>
+
+<h2>What you would have to buy</h2>
+<p>No prices below, on purpose. A number quoted from assumptions is a number I'd be held to and you'd be
+misled by. These are the categories, what drives the size of each, and what to get quoted once we've
+scoped your actual sites.</p>
+<table>
+<tr><th>Category</th><th>What drives the cost</th></tr>
+<tr><td><b>GPU compute</b></td><td>The one that matters. VRAM is the binding constraint — it decides what
+size model you can run and whether you can fine-tune on your own data or only run inference. One capable
+accelerator gets a department started; production and training want more</td></tr>
+<tr><td><b>Server host</b></td><td>CPU, ECC memory, chassis and power supply sized to the GPUs. Memory scales
+with how much document processing runs at once</td></tr>
+<tr><td><b>Fast storage</b></td><td>NVMe for the database and the vector index; interval data is
+time-series and grows continuously with meter count &times; retention period</td></tr>
+<tr><td><b>Database / application host</b></td><td>Can share the GPU box at pilot scale; wants separating in
+production so a training run can't starve the platform</td></tr>
+<tr><td><b>Backup &amp; redundancy</b></td><td>NAS or equivalent plus offsite. Non-negotiable once billing
+depends on it</td></tr>
+<tr><td><b>Power &amp; cooling</b></td><td>UPS, and honest wall-power and heat load for the GPUs. This is the
+line people forget and it is a real building question</td></tr>
+<tr><td><b>Network</b></td><td>Switching and segmentation for the server; a VLAN of its own</td></tr>
+<tr><td><b>Data acquisition units</b></td><td>AcquiSuite / Obvius modbus call-up systems — roughly one per
+building, depending on meter count and topology</td></tr>
+<tr><td><b>Meter upgrades</b></td><td>Only where a meter can't communicate, or can't report a channel you
+want detected. Per meter</td></tr>
+<tr><td><b>CTs / PTs</b></td><td>Where existing transformers are wrong, missing, or undocumented</td></tr>
+<tr><td><b>Connectivity</b></td><td>Cellular modem or building network path per site. Cellular is recurring</td></tr>
+<tr><td><b>Electrician labor</b></td><td>Install, commissioning, and — importantly — <b>documenting CT ratios
+correctly.</b> NYC rates</td></tr>
+</table>
+
+<h2>What I need from you to price it</h2>
+<ul>
+<li>How many buildings, and how many metered points each</li>
+<li>How many meters are already on a call-up system today</li>
+<li>What's installed out there — make, model, age</li>
+<li>Which sites have a network path out and which would need cellular</li>
+<li>Whether CT ratios are documented anywhere reliable, or whether that's a survey</li>
+<li>Retention requirement — how far back billing needs to reach</li>
+<li>What this has to coexist with or replace</li>
+</ul>
+<p>Give me that and I'll come back with a real scope and a real number based on your buildings instead of
+my assumptions.</p>
+
+<div class="warn"><div class="h">What it doesn't do yet — stated plainly</div>
+<p>CT/PT ratios not applied to financial figures. Rate schedules on screen are samples. LL97 view covers
+electrical emissions only and must not be projected past the current compliance period. Three of six
+detectors need channels most installed meters don't report. There is no AI generating any number you see —
+every figure is computed and auditable.</p></div>
+
+<div class="ok"><div class="h">How the billing module gets built</div>
+<p>I'm not going to tell your billing department how it should work. You tell me how the bills should come
+out, what the department needs to see, and what tenants get — and that's what gets built. The foundation is
+already there; what goes on top is your call.</p></div>
+<div class="nav"><a class="home" href="index.html">All sheets</a><a href="engineering.html">Engineering &amp; IT</a><a href="electrical.html">Electrical</a></div>
+<div class="foot">Meter Platform &middot; John Olivencia &middot; Prepared for the demo.
+Every figure here traces to a filed source document or a dated verification run. Nothing on this
+page is an estimate presented as a fact.</div>
+</div></body></html>

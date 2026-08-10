@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meter Platform — Sheets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0c;--ink:#f2efe9;--dim:#7c8088;--amber:#ff4a1c;--red:#ff4a1c;--line:#212228}
+body{background:var(--bg);color:var(--ink);font-family:Archivo,"Helvetica Neue",system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.5;padding:2rem 1.2rem 5rem}
+.wrap{max-width:46rem;margin:0 auto}
+.top{border-bottom:3px solid var(--amber);padding-bottom:1.1rem;margin-bottom:2rem}
+.eyebrow{font-family:"IBM Plex Mono",monospace;color:var(--amber);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(1.9rem,7vw,2.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:.5rem}
+.lede{color:var(--dim);font-size:1.02rem;margin-top:.8rem}
+h2{font-size:1.28rem;font-weight:800;letter-spacing:-.01em;margin:2.4rem 0 .9rem;
+ padding-left:.8rem;border-left:4px solid var(--amber)}
+p{color:#c9ccd2;margin:.7rem 0}
+b{color:#f2efe9}
+ul{list-style:none;margin:.6rem 0}
+li{color:#c9ccd2;padding:.42rem 0 .42rem 1.5rem;position:relative}
+li::before{content:"";position:absolute;left:0;top:1.02em;width:.7rem;height:2px;background:var(--amber)}
+table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.94rem}
+th{font-family:"IBM Plex Mono",monospace;text-align:left;color:var(--amber);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+ padding:.5rem .6rem .5rem 0;border-bottom:2px solid var(--line)}
+td{padding:.62rem .6rem .62rem 0;border-bottom:1px solid var(--line);color:#c9ccd2;vertical-align:top}
+td b{color:#f2efe9}
+.warn{border-left:4px solid var(--red);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.warn .h{color:var(--red);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.warn p{margin:.3rem 0;color:#e8c9ba}
+.ok{border-left:4px solid var(--amber);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.ok .h{color:var(--amber);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.quote{color:#f2efe9;font-size:1.06rem;border-left:4px solid var(--amber);padding-left:1rem;margin:1.2rem 0}
+.back{display:inline-block;margin-top:2.6rem;color:var(--amber);text-decoration:none;font-weight:700;
+ border:2px solid var(--amber);padding:.6rem 1.1rem}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);color:#5a616a;font-size:.82rem}
+.pill{display:inline-block;background:#1a0d08;border:1px solid var(--amber);color:var(--amber);
+ padding:.2rem .6rem;font-size:.74rem;font-weight:700;letter-spacing:.08em;margin:.15rem .3rem .15rem 0}
+a.card{display:block;border:2px solid var(--line);border-left:5px solid var(--amber);padding:1.3rem 1.2rem;
+ margin:1rem 0;text-decoration:none;transition:border-color .15s}
+a.card:hover{border-color:var(--amber)}
+a.card .t{color:#f2efe9;font-size:1.2rem;font-weight:800}
+a.card .d{color:var(--dim);font-size:.94rem;margin-top:.35rem}
+@media print{body{background:#fff;color:#000}p,li,td{color:#222}h1,b,td b,a.card .t{color:#000}}
+</style></head><body><div class="wrap">
+<div class="top">
+<div class="eyebrow">Meter Platform</div>
+<h1>Pick your sheet.</h1>
+<p class="lede">Three short sheets. Take the one for your job — none of them are long.</p>
+</div>
+<a class="card" href="engineering.html"><div class="t">Engineering &amp; IT</div>
+<div class="d">Architecture, how data gets in, where it's stored, security posture, what it needs from you</div></a>
+<a class="card" href="electrical.html"><div class="t">Electrical Engineering</div>
+<div class="d">What it measures, how baselines work, detection method, and the ConEd tariff math with leaf references</div></a>
+<a class="card" href="owners.html"><div class="t">Owners &amp; Investors</div>
+<div class="d">What exists today, what the pilot costs, what a full build-out needs, and what you'd have to buy</div></a>
+<div class="ok"><div class="h">The ask, in one sentence</div>
+<p>One building's meter files for 90 days. The system builds its baselines and we compare what it
+catches against what we catch by hand.</p></div>
+
+<div class="foot">Meter Platform &middot; John Olivencia &middot; Prepared for the demo.
+Every figure here traces to a filed source document or a dated verification run. Nothing on this
+page is an estimate presented as a fact.</div>
+</div></body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engineering & IT — Meter Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0c;--ink:#f2efe9;--dim:#7c8088;--amber:#ff4a1c;--red:#ff4a1c;--line:#212228}
+body{background:var(--bg);color:var(--ink);font-family:Archivo,"Helvetica Neue",system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.5;padding:2rem 1.2rem 5rem}
+.wrap{max-width:46rem;margin:0 auto}
+.top{border-bottom:3px solid var(--amber);padding-bottom:1.1rem;margin-bottom:2rem}
+.eyebrow{font-family:"IBM Plex Mono",monospace;color:var(--amber);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(1.9rem,7vw,2.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:.5rem}
+.lede{color:var(--dim);font-size:1.02rem;margin-top:.8rem}
+h2{font-size:1.28rem;font-weight:800;letter-spacing:-.01em;margin:2.4rem 0 .9rem;
+ padding-left:.8rem;border-left:4px solid var(--amber)}
+p{color:#c9ccd2;margin:.7rem 0}
+b{color:#f2efe9}
+ul{list-style:none;margin:.6rem 0}
+li{color:#c9ccd2;padding:.42rem 0 .42rem 1.5rem;position:relative}
+li::before{content:"";position:absolute;left:0;top:1.02em;width:.7rem;height:2px;background:var(--amber)}
+table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.94rem}
+th{font-family:"IBM Plex Mono",monospace;text-align:left;color:var(--amber);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+ padding:.5rem .6rem .5rem 0;border-bottom:2px solid var(--line)}
+td{padding:.62rem .6rem .62rem 0;border-bottom:1px solid var(--line);color:#c9ccd2;vertical-align:top}
+td b{color:#f2efe9}
+.warn{border-left:4px solid var(--red);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.warn .h{color:var(--red);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.warn p{margin:.3rem 0;color:#e8c9ba}
+.ok{border-left:4px solid var(--amber);background:#1a0d08;padding:1rem 1.1rem;margin:1.1rem 0}
+.ok .h{color:var(--amber);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.45rem}
+.quote{color:#f2efe9;font-size:1.06rem;border-left:4px solid var(--amber);padding-left:1rem;margin:1.2rem 0}
+.back{display:inline-block;margin-top:2.6rem;color:var(--amber);text-decoration:none;font-weight:700;
+ border:2px solid var(--amber);padding:.6rem 1.1rem}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line);color:#5a616a;font-size:.82rem}
+.pill{display:inline-block;background:#1a0d08;border:1px solid var(--amber);color:var(--amber);
+ padding:.2rem .6rem;font-size:.74rem;font-weight:700;letter-spacing:.08em;margin:.15rem .3rem .15rem 0}
+a.card{display:block;border:2px solid var(--line);border-left:5px solid var(--amber);padding:1.3rem 1.2rem;
+ margin:1rem 0;text-decoration:none;transition:border-color .15s}
+a.card:hover{border-color:var(--amber)}
+a.card .t{color:#f2efe9;font-size:1.2rem;font-weight:800}
+a.card .d{color:var(--dim);font-size:.94rem;margin-top:.35rem}
+
+.nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.6rem;padding-top:1.4rem;border-top:2px solid var(--line)}
+.nav a{flex:1;min-width:9rem;text-align:center;border:2px solid var(--line);color:#c9ccd2;
+ text-decoration:none;padding:.75rem .6rem;font-weight:700;font-size:.92rem}
+.nav a:hover,.nav a.home{border-color:var(--amber);color:var(--amber)}
+@media print{body{background:#fff;color:#000}p,li,td{color:#222}h1,b,td b,a.card .t{color:#000}}
+</style></head><body><div class="wrap">
+<div class="top">
+<div class="eyebrow">Sheet 1 of 3</div>
+<h1>Engineering &amp; IT</h1>
+<p class="lede">What it's built on, how data moves through it, and what it would need from your side.</p>
+</div>
+
+<h2>The whole system in three steps</h2>
+<table>
+<tr><th>Step</th><th>What happens</th></tr>
+<tr><td><b>Ingest</b></td><td>Reads the export files the meters already produce. CSV and Excel today; a real
+85-column E-Mon D-Mon master file ingested <b>4,818 of 4,818 rows with zero errors</b>, auto-mapping 13 columns.
+Modbus / AcquiSuite feeds are the next lane.</td></tr>
+<tr><td><b>Baseline</b></td><td>Per meter, per hour of day, per day of week, evaluated in New York local time.
+Minimum 90 days of history — under that it <b>refuses to analyze</b> rather than guess.</td></tr>
+<tr><td><b>Alert</b></td><td>Deviations become events, events become assigned tasks. Detection resolves to the
+15-minute interval.</td></tr>
+</table>
+
+<h2>Stack</h2>
+<ul>
+<li><b>Backend</b> — Python 3.11, FastAPI, SQLAlchemy 2.0 async, asyncpg</li>
+<li><b>Database</b> — TimescaleDB (PostgreSQL 16), hypertables for interval data</li>
+<li><b>Frontend</b> — React 19, TypeScript, Vite, ECharts</li>
+<li><b>Auth</b> — JWT with org scope and roles (Admin / Technician / Viewer)</li>
+<li><b>Tests</b> — pytest and Playwright; 600+ backend tests</li>
+</ul>
+
+<h2>Security</h2>
+<table>
+<tr><th>Control</th><th>How it's enforced</th></tr>
+<tr><td><b>Tenant isolation</b></td><td>Every query is org-scoped. A cross-tenant request returns
+<b>404, not a filtered list</b> — the resource simply doesn't exist for you. 38 tests do nothing but try to break it.</td></tr>
+<tr><td><b>Passwords</b></td><td>12-character minimum enforced at registration, password change, and admin
+invite — all three share one policy. bcrypt hashed.</td></tr>
+<tr><td><b>Transport &amp; surface</b></td><td>CORS locked to known origins. API docs disabled in production,
+fail-closed. Database TLS certificate verification on.</td></tr>
+<tr><td><b>Secrets</b></td><td>Environment-based. No <code>.env</code> has ever been committed; all 389 commits
+including remote branches were swept.</td></tr>
+<tr><td><b>Error leakage</b></td><td>The unauthenticated health endpoint used to echo raw database errors —
+hostnames and usernames. Fixed; generic response now.</td></tr>
+<tr><td><b>Local models</b></td><td>For the AI layer, models run on your hardware. Company documents never
+leave the building and never hit a third-party API.</td></tr>
+</table>
+
+<h2>Where it runs</h2>
+<p>For a pilot it runs on <b>your infrastructure, under your accounts, holding your data.</b> Your data never
+touches my personal environment, and my source repository never lands on your infrastructure. That's not
+caution for its own sake — it's the only arrangement that's clean for both sides.</p>
+
+<h2>What it needs from you</h2>
+<ul>
+<li><b>Nothing installed.</b> No agent, no appliance, no change to how meters are read today.</li>
+<li>One building's meter export files — 90 days' worth.</li>
+<li>Somebody who can tell us whether a given catch was real.</li>
+</ul>
+
+<div class="warn"><div class="h">Known limits — read these</div>
+<p><b>CT/PT ratios are stored but not applied as a multiplier.</b> Dollar figures are computed on raw
+register values. Deliberate: applying them changes every number in the app.</p>
+<p><b>No AI in the explanations.</b> They're deterministic template text — same inputs, same output, every
+time, and auditable. A language layer is designed and costed but not shipped, because a model that can
+invent a number has no business near a bill.</p>
+<p><b>Weather / grid-event correlation is not operational.</b> The collector queries an archive endpoint that
+lags several days, and buildings aren't geocoded. Treat it as unbuilt.</p>
+<p><b>Three of the six detectors need channels most meters don't report</b> — see the Electrical sheet.</p>
+</div>
+<div class="nav"><a class="home" href="index.html">All sheets</a><a href="electrical.html">Electrical</a><a href="owners.html">Owners</a></div>
+<div class="foot">Meter Platform &middot; John Olivencia &middot; Prepared for the demo.
+Every figure here traces to a filed source document or a dated verification run. Nothing on this
+page is an estimate presented as a fact.</div>
+</div></body></html>
