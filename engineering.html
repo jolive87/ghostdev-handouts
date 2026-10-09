@@ -102,6 +102,16 @@ caution for its own sake — it's the only arrangement that's clean for both sid
 <li>Somebody who can tell us whether a given catch was real.</li>
 </ul>
 
+<div class="warn"><div class="h">Known limits — read these</div>
+<p><b>CT/PT ratios are stored but not applied as a multiplier.</b> Dollar figures are computed on raw
+register values. Deliberate: applying them changes every number in the app.</p>
+<p><b>No AI in the explanations.</b> They're deterministic template text — same inputs, same output, every
+time, and auditable. A language layer is designed and costed but not shipped, because a model that can
+invent a number has no business near a bill.</p>
+<p><b>Weather / grid-event correlation is not operational.</b> The collector queries an archive endpoint that
+lags several days, and buildings aren't geocoded. Treat it as unbuilt.</p>
+<p><b>Three of the six detectors need channels most meters don't report</b> — see the Electrical sheet.</p>
+</div>
 <div class="nav"><a class="home" href="index.html">All sheets</a><a href="electrical.html">Electrical</a><a href="owners.html">Owners</a></div>
 <div class="foot">Meter Platform &middot; Jon Olivencia &middot; Prepared for the demo.
 Every figure here traces to a filed source document or a dated verification run. Nothing on this
